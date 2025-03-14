@@ -1,5 +1,5 @@
 let listaDeNumerosSorteados = [];
-let numeroLimite = 10;
+let numeroLimite = 50;
 let numeroSecreto = gerarNumAleatorio();
 let tentativas = 1;
 
@@ -19,7 +19,7 @@ function exibirTextoNaTela(tag, texto) {
 
 function exibirMensagemInicial() {
     exibirTextoNaTela('h1', 'Jogo dos Oráculos');
-    exibirTextoNaTela('p', 'Escolha um número entre 1 e 100:');
+    exibirTextoNaTela('p', 'Escolha um número entre 1 e 50:');
 }
 exibirMensagemInicial();
 
@@ -29,9 +29,9 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
 
    if (chute == numeroSecreto) {
-    exibirTextoNaTela('h1', 'Acertou mizeravi!');
+    exibirTextoNaTela('h1', 'Você acertou, Grande Mestre!');
     let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
-    let mensagemTentativas = `Voce acertou o numero secreto com ${tentativas} ${palavraTentativa}!`;
+    let mensagemTentativas = `Você acertou o número secreto com ${tentativas} ${palavraTentativa}!`;
     exibirTextoNaTela('p', mensagemTentativas);
     document.getElementById('reiniciar').removeAttribute('disabled');
    } else {
